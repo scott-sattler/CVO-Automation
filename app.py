@@ -85,37 +85,34 @@ def call_downstream_api():
 
 @app.route("/get_data")
 def get_data():
-    token = auth.get_token_for_user(app_config.SCOPE)
+    api_result = {}
+    return render_template('display.html', result=api_result)
+    # token = auth.get_token_for_user(app_config.SCOPE)
     # print(token)
-    if "error" in token:
-        return redirect(url_for("login"))
-    # Use access token to call downstream api
-    api_result = requests.get(
-        app_config.ENDPOINT_G,
-        headers={'Authorization': 'Bearer ' + token['access_token']},
-        timeout=30,
-    )
+    # if "error" in token:
+    #     return redirect(url_for("login"))
+    # # Use access token to call downstream api
+    # api_result = requests.get(
+    #     app_config.ENDPOINT_G,
+    #     headers={'Authorization': 'Bearer ' + token['access_token']},
+    #     timeout=30,
+    # )
 
-    if api_result.status_code == 200:
-        print(str(f'\x1b[{str(92)}m' + 'Status Code 200 (OK!)' + '\x1b[0m'))
-        bytes_io_obj = BytesIO(api_result.content)
-        df = pd.read_excel(bytes_io_obj)
-        # dict_table = df.to_dict()
+    # if api_result.status_code == 200:
+    #     print(str(f'\x1b[{str(92)}m' + 'Status Code 200 (OK!)' + '\x1b[0m'))
+    #     bytes_io_obj = BytesIO(api_result.content)
+    #     df = pd.read_excel(bytes_io_obj)
+    #     # dict_table = df.to_dict()
 
-        rows = [[element for element in row] for row_index, row in df.iterrows()]
-        rows.append(list(df.to_dict().keys()))
-        # api_result = (rows, dict_table)
-        api_result = rows
-    else:
-        print(api_result)
-        api_result = {'api_result': api_result.status_code}
+    #     rows = [[element for element in row] for row_index, row in df.iterrows()]
+    #     rows.append(list(df.to_dict().keys()))
+    #     # api_result = (rows, dict_table)
+    #     api_result = rows
+    # else:
+    #     print(api_result)
+    #     api_result = {'api_result': api_result.status_code}
 
-    return render_template('display_data.html', result=api_result)
-
-
-# @app.route("/index3")
-# def index3():
-#     return render_template('index3.html', result=None)
+    # return render_template('display_data.html', result=api_result)
 
 
 if __name__ == "__main__":

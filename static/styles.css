@@ -1,0 +1,128 @@
+@import "pure.css";
+@import "portal.css";
+
+/* Goodwill Blue
+#009ed7
+*/
+
+.flex-container {
+    display: flex;
+    align-items: center;
+}
+
+
+
+/* subclass of portal .splash-head */
+.splash-head-navbar {
+    font-size: 20px;
+    font-weight: bold;
+    color: white;
+    border: 3px solid white;
+    padding: 0em 1.6em 0em 0em;
+    font-weight: 100;
+    /* border-radius: 5px; */
+    line-height: 1em;
+
+    margin-right: 30px;
+    margin-left: 30px;
+
+    /*  display: flex; */
+}
+
+
+.nav-button {
+    background-color: #e7e7e7;
+    color: black;
+    border-radius: 0px;
+    width: 10rem;
+    font-size: 18px;
+    margin-top: 2px;
+}
+
+.gw_color {
+    background-color: #1f8dd6;
+}
+
+.portal_body {
+  background-color: #1f8dd6;
+  /* background-color: #1f8dd6; */
+  /* background-color: #30529c; */
+
+  color: white;
+  font-size: 1em;
+}
+
+/* portal override */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+label {
+    /* color: #34495e; */
+    color: #30529c;
+}
+
+.portal_heading {
+  margin: auto;
+  width: 50%;
+  border: 3px solid green;
+  padding: 10px;
+  font-size: 3em
+}
+
+.portal_footer {
+  background-color: #1f8dd6;
+  color: white;
+  margin-left: auto;
+  margin-right: 1em;
+}
+
+.hidden_link {
+    text-decoration: none;
+    and color: black;
+}
+
+.background_img {
+    /* background-image: url("gw_logo.svg.png"); */
+    background-image: url("gw_logo.svg.png");
+    background-repeat: no-repeat, repeat;
+    background-position: right center;
+    background-size: contain;
+    background-clip: border-box;
+
+}
+
+.background_left {
+    background-position: left center;
+
+}
+
+
+a.custom-large {
+    font-size: 140%;
+}
+
+@media screen and (min-width: 1024px) {
+    a.custom-large {
+        font-size: 140%;
+    }
+}
+
+
+.splash {
+    /* absolute center .splash within .splash-container */
+    width: 95%;
+    height: 100%;
+    margin: auto;
+    position: absolute;
+    top: 50px; left: 0; bottom: 0; right: 0;
+    /* text-align: center; */
+    text-transform: uppercase;
+}
+
+/*
+@import "normalize.css";
+*/
+

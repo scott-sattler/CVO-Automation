@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>GCTA CDL Portal</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body class="portal_body">
+
+    <div class="splash-container">
+        <div class="splash">
+            <h1 class="splash-head background_img">
+                <div style="position: relative;">
+                    <div style="text-align: left; margin-right: 12%">
+                        <div style="clear: left; color: black; font-weight: 800;">GCTA<br></div>
+                        <div>Commercial Driver's License<br></div>
+                        <div style="color: black; font-weight: 600;">Portal</div>
+                    </div>
+
+                </div>
+            </h1>
+
+            <p class="splash-subhead">
+                <!--facilitating change through skills training.-->
+            </p>
+
+            <div>
+                <p>
+                    <a href="localhost/students.html" class="pure-button pure-button-primary custom-large" style="width: 100%;">Student Login</a>
+                </p>
+                <p>
+                    <a href="localhost/students.html" class="pure-button pure-button-primary custom-large" style="width: 100%;">Registration</a>
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer portal_footer" style="text-align: right">
+        {% if user_code %}
+          To sign in, type <b>{{ user_code }}</b> into <a href='{{ auth_uri }}' target=_blank>{{ auth_uri }}</a> to authenticate.
+          And then <a href="{{ url_for('auth_response') }}">proceed</a>.
+        {% else %}
+        <a class="hidden_link" style="margin-left: auto; margin-right: 1em;" href='{{ auth_uri }}'>Instructor Login</a>
+        {% endif %}
+
+        {% if config.get("B2C_RESET_PASSWORD_AUTHORITY") %}
+        <a href="{{config.get('B2C_RESET_PASSWORD_AUTHORITY')}}?client_id={{config.get('CLIENT_ID')}}">Reset Password</a>
+        {% endif %}
+
+    </div>
+
+    <footer style="text-align: right">Microsoft Identity Platform</footer>
+</body>
+</html>

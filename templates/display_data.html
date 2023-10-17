@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>GCTA Data</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+<!--    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/purecss@3.0.0/build/base-min.css">-->
+
+
+</head>
+<body>
+<!--    <p>{{ url_for('static', filename='styles.css') }}</p>-->
+
+<!--    <a class="pure-button" href="javascript:window.history.go(-1)">Back</a> &lt;!&ndash; Displayed on top of a potentially large JSON response, so it will remain visible &ndash;&gt;-->
+<!--    <h1>Results API call authenticated via MS log in:</h1>-->
+<!--    <pre>{{ result |tojson(indent=4) }}</pre> &lt;!&ndash; Just a generic json viewer &ndash;&gt;-->
+
+
+    <div class="splash">
+
+        <div class="pure-menu pure-menu-horizontal" style="text-align: left;">
+            <a href="/" class="pure-menu-heading pure-menu-link">HOME</a>
+            <ul class="pure-menu-list">
+                <li class="pure-menu-item">
+                    <a href="#" class="pure-menu-link">Things1</a>
+                </li>
+                <li class="pure-menu-item">
+                    <a href="#" class="pure-menu-link">Things2</a>
+                </li>
+                <li class="pure-menu-item">
+                    <a href="#" class="pure-menu-link">Things3</a>
+                </li>
+            </ul>
+        </div>
+
+        <table class="pure-table pure-table-bordered pure-table-striped">
+            <thead>
+                {% for head in result.pop() %}
+                <th>
+                    {{ head }}
+                </th>
+                {% endfor %}
+            </thead>
+            <tbody>
+                {% for item in result %}
+                <tr>
+                    {% for elem in item %}
+                    <td>{{ elem }}</td>
+                    {% endfor %}
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+
+    </div>
+
+
+</body>
+</html>

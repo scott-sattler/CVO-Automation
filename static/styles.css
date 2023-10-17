@@ -110,6 +110,13 @@ a.custom-large {
     }
 }
 
+/* for small screens */
+@media screen and (max-width: 600px) {
+    a.custom-large {
+        font-size: 200%;
+    }
+  }
+
 
 .splash {
     /* absolute center .splash within .splash-container */

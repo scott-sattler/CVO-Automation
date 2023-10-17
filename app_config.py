@@ -26,6 +26,10 @@ SITE_ID = os.getenv("SITE_ID")
 ITEM_ID = os.getenv("ITEM_ID")
 ENDPOINT_G = os.getenv("ENDPOINT_G")
 
+AZURE_TENANT_ID = os.getenv("AZURE_TENANT_ID")
+AZURE_CLIENT_ID = os.getenv("AZURE_CLIENT_ID")
+AZURE_CLIENT_SECRET = os.getenv("AZURE_CLIENT_SECRET")
+
 # You can find the proper permission names from this document
 # https://docs.microsoft.com/en-us/graph/permissions-reference
 SCOPE = ["User.ReadBasic.All"]

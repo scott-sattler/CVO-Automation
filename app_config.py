@@ -20,11 +20,11 @@ REDIRECT_PATH = "/getAToken"  # Used for forming an absolute URL to your redirec
 ENDPOINT = 'https://graph.microsoft.com/v1.0/users'  # This resource requires no admin consent
 
 # WORKING TEST
-drive_id = ''
-web_id = ''
-site_id = ''
-item_id = ''
-ENDPOINT2 = ''
+DRIVE_ID = os.getenv("DRIVE_ID")
+WEB_ID = os.getenv("WEB_ID")
+SITE_ID = os.getenv("SITE_ID")
+ITEM_ID = os.getenv("ITEM_ID")
+ENDPOINT2 = os.getenv("ENDPOINT2")
 
 # You can find the proper permission names from this document
 # https://docs.microsoft.com/en-us/graph/permissions-reference

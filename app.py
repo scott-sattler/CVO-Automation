@@ -91,7 +91,7 @@ def get_data():
         return redirect(url_for("login"))
     # Use access token to call downstream api
     api_result = requests.get(
-        app_config.ENDPOINT2,
+        app_config.ENDPOINT_G,
         headers={'Authorization': 'Bearer ' + token['access_token']},
         timeout=30,
     )
@@ -115,9 +115,9 @@ def get_data():
     return render_template('display_data.html', result=api_result)
 
 
-@app.route("/index3")
-def index3():
-    return render_template('index3.html', result=None)
+# @app.route("/index3")
+# def index3():
+#     return render_template('index3.html', result=None)
 
 
 if __name__ == "__main__":

@@ -121,8 +121,8 @@ def get_data():
 
 
 if __name__ == "__main__":
-    # app.run(host="localhost")
-    serve(app, host='0.0.0.0', port=8000)
+    app.run(host="localhost")
+    # serve(app, host='0.0.0.0', port=8000)
 
 
 

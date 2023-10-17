@@ -24,7 +24,7 @@ DRIVE_ID = os.getenv("DRIVE_ID")
 WEB_ID = os.getenv("WEB_ID")
 SITE_ID = os.getenv("SITE_ID")
 ITEM_ID = os.getenv("ITEM_ID")
-ENDPOINT2 = os.getenv("ENDPOINT2")
+ENDPOINT_G = os.getenv("ENDPOINT_G")
 
 # You can find the proper permission names from this document
 # https://docs.microsoft.com/en-us/graph/permissions-reference

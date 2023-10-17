@@ -96,8 +96,6 @@ def get_data():
         timeout=30,
     )
 
-    print(app_config.site_id)
-
     if api_result.status_code == 200:
         print(str(f'\x1b[{str(92)}m' + 'Status Code 200 (OK!)' + '\x1b[0m'))
         bytes_io_obj = BytesIO(api_result.content)
@@ -121,8 +119,9 @@ def get_data():
 
 
 if __name__ == "__main__":
-    app.run(host="localhost")
-    # serve(app, host='0.0.0.0', port=8000)
+    # app.run(host="localhost", debug=True, port=5000)
+    # serve(app, host='localhost', port=5000)
+    serve(app, host='0.0.0.0', port=8000)
 
 
 

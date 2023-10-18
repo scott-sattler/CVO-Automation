@@ -1,25 +1,28 @@
 <div class="flex-container">
-    <div style="flex;">
-        <div class="splash-head-navbar background_img background_left" style="margin-left; 16em;">
-        <!--        <div style="position: relative;">-->
-        <!--            <div style="text-align: left; margin-right: 12%">-->
-        <!--                <div style="clear: left; color: black; font-weight: 800;">GCTA<br></div>-->
-        <!--                <div>Commercial Driver's License<br></div>-->
-        <!--                <div style="color: black; font-weight: 600;">Portal</div>-->
-        <!--            </div>-->
-        <!--        </div>-->
-            <h2 style="margin-left: 4em; margin-right: 0em; color: black;">User: {{ user.get("name") }}</h2>
-        </div>
+    
+    <div style="">
+        <a href="/" class="hidden_link">
+            <div class="splash-head-navbar background_img background_left" style="">
+                <!--        <div style="position: relative;">-->
+                <!--            <div style="text-align: left; margin-right: 12%">-->
+                <!--                <div style="clear: left; color: black; font-weight: 800;">GCTA<br></div>-->
+                <!--                <div>Commercial Driver's License<br></div>-->
+                <!--                <div style="color: black; font-weight: 600;">Portal</div>-->
+                <!--            </div>-->
+                <!--        </div>-->
+                <h2 style="margin-left: 2.5em; margin-right: 0em; color: black;">User: {{ user.get("name") }}</h2>
+            </div>
+        </a>
     </div>
 
-    <div style="flex-grow: 1;">
-    </div>
+    <div style="flex-grow: 1;"></div>
 
-
-    <div style="flex; margin-right: 1em;">
+    <div style="margin-right: 2em;">
         {% if config.get("ENDPOINT_G") %}
         <a href='/get_data' class="pure-button nav-button" style="">View Grades</a>
         {% endif %}
+
+        <a href='' onclick="return confirm('/archive Not Implemented.');" class="pure-button nav-button" style="">Archive</a>
 
         {% if config.get("ENDPOINT") %}
         <a href='/call_downstream_api' class="pure-button nav-button" style="">Call API</a> <!-- Call Downstream API -->
@@ -28,8 +31,6 @@
         {% if config.get("B2C_PROFILE_AUTHORITY") %}
         <a href='{{config.get("B2C_PROFILE_AUTHORITY")}}?client_id={{config.get("CLIENT_ID")}}' class="pure-button nav-button" style="">Edit Profile</a>
         {% endif %}
-
-        <a href='/index3' class="pure-button nav-button" style="">Index Test</a>
 
         <a href='/logout' class="pure-button nav-button" style="">Logout</a>
     </div>

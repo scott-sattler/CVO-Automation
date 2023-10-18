@@ -86,7 +86,7 @@ def call_downstream_api():
 @app.route("/get_data")
 def get_data():
     token = auth.get_token_for_user(app_config.SCOPE)
-    print(token)
+    if app.debug: print(token)
     if "error" in token:
         return redirect(url_for("login"))
     # Use access token to call downstream api
@@ -97,7 +97,7 @@ def get_data():
     )
 
     if api_result.status_code == 200:
-        # print(str(f'\x1b[{str(92)}m' + 'Status Code 200 (OK!)' + '\x1b[0m'))
+        if app.debug: print(str(f'\x1b[{str(92)}m' + 'Status Code 200 (OK!)' + '\x1b[0m'))
         bytes_io_obj = BytesIO(api_result.content)
         df = pd.read_excel(bytes_io_obj)
         # dict_table = df.to_dict()
@@ -107,11 +107,10 @@ def get_data():
         # api_result = (rows, dict_table)
         api_result = rows
     else:
-        print('STATUS NOT OK:', api_result, api_result.json())
-        # api_result = {'api_result': [api_result.status_code, 'foo', 'foo']}
-        api_result = ['pop1', 'pop2', 'pop3']
+        if app.debug: print('STATUS NOT OK:', api_result, api_result.json())
+        api_result = list(api_result.json().items())
 
-    return render_template('display_data.html', result=api_result)
+    return render_template('display_data.html', user=auth.get_user(), result=api_result)
 
 
 if __name__ == "__main__":

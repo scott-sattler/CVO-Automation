@@ -32,8 +32,8 @@ AZURE_CLIENT_SECRET = os.getenv("AZURE_CLIENT_SECRET")
 
 # You can find the proper permission names from this document
 # https://docs.microsoft.com/en-us/graph/permissions-reference
-# SCOPE = ["User.ReadBasic.All"]
-SCOPE = ["User.ReadBasic.All", "offline_access", "openid", "Sites.Read.All", "User.Read", "AllSites.Read", "AllSites.Write"]
+SCOPE = ["User.ReadBasic.All"]
+# SCOPE = ["User.ReadBasic.All", "offline_access", "openid", "Sites.Read.All", "User.Read", "AllSites.Read", "AllSites.Write"]
 
 # Tells the Flask-session extension to store sessions in the filesystem
 SESSION_TYPE = "filesystem"

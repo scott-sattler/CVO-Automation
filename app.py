@@ -86,7 +86,7 @@ def call_downstream_api():
 @app.route("/get_data")
 def get_data():
     token = auth.get_token_for_user(app_config.SCOPE)
-    # print(token)
+    print(token)
     if "error" in token:
         return redirect(url_for("login"))
     # Use access token to call downstream api
@@ -107,8 +107,8 @@ def get_data():
         # api_result = (rows, dict_table)
         api_result = rows
     else:
-        print(api_result)
-        api_result = {'api_result': api_result.status_code}
+        print('STATUS NOT OK:', api_result)
+        api_result = {'api_result': [api_result.status_code]}
 
     return render_template('display_data.html', result=api_result)
 

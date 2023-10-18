@@ -107,8 +107,9 @@ def get_data():
         # api_result = (rows, dict_table)
         api_result = rows
     else:
-        print('STATUS NOT OK:', api_result)
-        api_result = {'api_result': [api_result.status_code]}
+        print('STATUS NOT OK:', api_result, api_result.json())
+        # api_result = {'api_result': [api_result.status_code, 'foo', 'foo']}
+        api_result = ['pop1', 'pop2', 'pop3']
 
     return render_template('display_data.html', result=api_result)
 

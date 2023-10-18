@@ -6,8 +6,14 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
 </head>
 <body>
-    <a href="javascript:window.history.go(-1)">Back</a> <!-- Displayed on top of a potentially large JSON response, so it will remain visible -->
-    <h1>Result of the downstream API Call</h1>
-    <pre>{{ result |tojson(indent=4) }}</pre> <!-- Just a generic json viewer -->
+    {% macro indent_macro() %}{% include "navbar.html" %}{% endmacro %}
+    {{ indent_macro()|indent }}
+
+    <div style="margin-left: 2em;">
+        <!-- <a href="javascript:window.history.go(-1)">Back</a> --> <!-- Displayed on top of a potentially large JSON response, so it will remain visible -->
+        <h1>Result of the downstream API Call</h1>
+        <pre>{{ result |tojson(indent=4) }}</pre> <!-- Just a generic json viewer -->
+    </div>
+
 </body>
 </html>

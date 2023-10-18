@@ -80,7 +80,7 @@ def call_downstream_api():
         headers={'Authorization': 'Bearer ' + token['access_token']},
         timeout=30,
     ).json()
-    return render_template('display.html', result=api_result)
+    return render_template('display.html', user=auth.get_user(), result=api_result)
 
 
 @app.route("/get_data")

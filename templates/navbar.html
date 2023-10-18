@@ -1,8 +1,8 @@
 <div class="flex-container">
-    
-    <div style="">
+
+    <div>
         <a href="/" class="hidden_link">
-            <div class="splash-head-navbar background_img background_left" style="">
+            <div class="splash-head-navbar background_img background_left">
                 <!--        <div style="position: relative;">-->
                 <!--            <div style="text-align: left; margin-right: 12%">-->
                 <!--                <div style="clear: left; color: black; font-weight: 800;">GCTA<br></div>-->
@@ -19,20 +19,20 @@
 
     <div style="margin-right: 2em;">
         {% if config.get("ENDPOINT_G") %}
-        <a href='/get_data' class="pure-button nav-button" style="">View Grades</a>
+        <a href='/get_data' class="pure-button nav-button">View Grades</a>
         {% endif %}
 
-        <a href='' onclick="return confirm('/archive Not Implemented.');" class="pure-button nav-button" style="">Archive</a>
+        <a href='' onclick="return confirm('/archive Not Implemented.');" class="pure-button nav-button">Archive</a>
 
         {% if config.get("ENDPOINT") %}
-        <a href='/call_downstream_api' class="pure-button nav-button" style="">Call API</a> <!-- Call Downstream API -->
+        <a href='/call_downstream_api' class="pure-button nav-button">Call API</a> <!-- Call Downstream API -->
         {% endif %}
 
         {% if config.get("B2C_PROFILE_AUTHORITY") %}
-        <a href='{{config.get("B2C_PROFILE_AUTHORITY")}}?client_id={{config.get("CLIENT_ID")}}' class="pure-button nav-button" style="">Edit Profile</a>
+        <a href='{{config.get("B2C_PROFILE_AUTHORITY")}}?client_id={{config.get("CLIENT_ID")}}' class="pure-button nav-button">Edit Profile</a>
         {% endif %}
 
-        <a href='/logout' class="pure-button nav-button" style="">Logout</a>
+        <a href='/logout' class="pure-button nav-button">Logout</a>
     </div>
 
 </div>

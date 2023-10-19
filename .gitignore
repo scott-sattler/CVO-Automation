@@ -6,6 +6,7 @@ old_*
 .idea/
 .backups/
 .scratch*
+testing/
 
 # C extensions
 *.so
